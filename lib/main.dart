@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Voice',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SpeechScreen(),
@@ -32,6 +32,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
     'flutter': HighlightedWord(
       onTap: () => print('flutter'),
       textStyle: const TextStyle(
+        fontSize: 32.0,
         color: Colors.blue,
         fontWeight: FontWeight.bold,
       ),
@@ -39,6 +40,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
     'voice': HighlightedWord(
       onTap: () => print('voice'),
       textStyle: const TextStyle(
+        fontSize: 32.0,
         color: Colors.green,
         fontWeight: FontWeight.bold,
       ),
@@ -46,6 +48,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
     'subscribe': HighlightedWord(
       onTap: () => print('subscribe'),
       textStyle: const TextStyle(
+        fontSize: 32.0,
         color: Colors.red,
         fontWeight: FontWeight.bold,
       ),
@@ -54,6 +57,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
       onTap: () => print('like'),
       textStyle: const TextStyle(
         color: Colors.blueAccent,
+        fontSize: 32.0,
         fontWeight: FontWeight.bold,
       ),
     ),
@@ -61,6 +65,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
       onTap: () => print('comment'),
       textStyle: const TextStyle(
         color: Colors.green,
+        fontSize: 32.0,
         fontWeight: FontWeight.bold,
       ),
     ),
@@ -81,7 +86,11 @@ class _SpeechScreenState extends State<SpeechScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Confidence: ${(_confidence * 100.0).toStringAsFixed(1)}%'),
+        centerTitle: true,
+        title: Text(
+          'Confidence: ${(_confidence * 100.0).toStringAsFixed(1)}%',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
